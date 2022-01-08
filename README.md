@@ -32,6 +32,7 @@ cd web
 ```
 
 IMPORTANT! - BEFORE RUNNING THE PROJECT ENSURE ALL LOCAL PORTS ARE CLOSE OR PROJECT WILL NOT RUN
+
 Run project
 ```
 mvn spring-boot:run
