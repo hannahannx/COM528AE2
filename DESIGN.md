@@ -50,7 +50,7 @@ I will be documenting the key design process development work implememted to pla
 This use case diagram demonstrates the requirements that are carried out in the shopping cart system alongside the stakeholders communicating with the system.
 The diagram shows 3 main actors in the system: Customer, Anonymous (a generalisation assosiation (Bennett et al. , 2004 p.28) from a customer, once the anonnymous user creates an account) and Admin. It also has Bank which interacts with the transactions made to transfer money between the two accounts.
 
-[fullusecaseupdated](https://user-images.githubusercontent.com/72127228/148687628-0430a080-0f6a-4e76-a12f-dcb47e49904a.png)
+![fullusecaseupdated](https://user-images.githubusercontent.com/72127228/148689426-b036948b-153c-495a-be3e-8a8b744abf87.png)
 
 Below is the use case description for the Shopping cart system.
 
