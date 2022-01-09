@@ -2,6 +2,46 @@
 
 I will be documenting the key design process development work implememted to plan this Shopping cart system
 
+## List of Features
+
+### Home View
+
+- view item list
+- add/remove items from shopping cart
+- search for items
+
+### Shopping Cart View
+
+- view added items
+- view total price
+- view checkout
+
+### Checkout View
+
+- enter card details
+- comfirm purchase
+
+### Orders View
+
+- view all orders (customer)
+- edit order status
+- view orders from all users (admin)
+
+### Users View
+
+- create user
+- login to user
+- update user
+- update user role (admin)
+
+### Catalogue View (admin)
+
+- view all items in stock
+- view/edit/delete items   
+
+
+
+
 ## Use case diagram and use cases
 
 ### UML Use Case Diagram
