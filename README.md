@@ -1,5 +1,7 @@
 # COM528AE2 - Shopping Application Program 
 
+## [Desgin](https://github.com/hannahannx/COM528AE2/blob/master/DESIGN.md)
+
 ## How to run project
 
 Clone this repo
