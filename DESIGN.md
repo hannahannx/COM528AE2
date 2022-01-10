@@ -108,10 +108,22 @@ In this shopping cart system I will provide a comprehensive range of tests throu
 
 ## UML Class Model
 
-"Class diagrams describe the system in terms of objects, classes, attributes, operations, andtheir associations" (Bruegge, B. and Dutoit, A. (2013 p. 30)) 
+"Class diagrams describe the system in terms of objects, classes, attributes, operations, and their associations" (Bruegge, B. and Dutoit, A. (2013 p. 30)) 
 
 ![UMLShoppingCartDiagram xlsx](https://user-images.githubusercontent.com/72127228/148710382-f63640ac-5db9-4426-9137-1b6b5a6185a0.png)
 
+## Robustness Diagram
+
+Below is the robustness diagram for the shopping cart system
+
+![RobustnessDiagram](https://user-images.githubusercontent.com/72127228/148714441-9487c9d3-6444-488a-ac54-e9505e77a782.png)
+
+
+## Sequence Diagram
+
+Below is the sequence diagram for the shopping cart system
+
+![sequencediagram](https://user-images.githubusercontent.com/72127228/148715228-4928e839-f33d-4e78-a1b7-8b89fa4875e6.png)
 
 # References
 BENNETT, S.J., J. SKELTON and K. LUNN, 2004. Schaum’s Outline’s UML. 2nd ed. New York, NY: McGraw-Hill Professional.
