@@ -105,9 +105,18 @@ In this shopping cart system I will provide a comprehensive range of tests throu
 | T18 	| U18 | user will click  deactivate account | Confirmation message appears - are you sure you would like to do this action? Then user is unable to access account and session is removed for user |  -  | - |
 | T19 	| U19 | deactivated user will try to log in | Error message displayed  -  "Sorry your account has been deactivated" |  -  | - |
 
+
+## UML Class Model
+
+"Class diagrams describe the system in terms of objects, classes, attributes, operations, andtheir associations" (Bruegge, B. and Dutoit, A. (2013 p. 30)) 
+
+![UMLShoppingCartDiagram xlsx](https://user-images.githubusercontent.com/72127228/148710382-f63640ac-5db9-4426-9137-1b6b5a6185a0.png)
+
+
 # References
-BENNETT, S.J., J. SKELTON and K. LUNN, 2004. Schaum’s Outline’s UML. 2nd ed. New York, NY: McGraw-Hill Professional.  
-UNHELKAR, B., 2017. Software Engineering with UML. London, England: Auerbach
+BENNETT, S.J., J. SKELTON and K. LUNN, 2004. Schaum’s Outline’s UML. 2nd ed. New York, NY: McGraw-Hill Professional.
+BRUEGGE, B. AND DUTOIT, A., 2013. Object-Oriented Software Engineering Using UML, Patterns, and Java: Pearson New International Edition. 3rd edn. Pearson. Available at: https://www.perlego.com/book/811690/objectoriented-software-engineering-using-uml-patterns-and-java-pearson-new-international-edition-pdf (Accessed: 10 January 2022).  
+UNHELKAR, B., 2017. Software Engineering with UML. London, England: Auerbach 
 
 
 
