@@ -5,11 +5,14 @@
  */
 package org.solent.com504.oodd.cart.spring.service;
 
+import java.util.Arrays;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.solent.com504.oodd.cart.dao.impl.ShoppingItemCatalogRepository;
 import org.solent.com504.oodd.cart.dao.impl.UserRepository;
+import org.solent.com504.oodd.cart.model.dto.ShoppingItem;
 import org.solent.com504.oodd.cart.model.dto.User;
 import org.solent.com504.oodd.cart.model.dto.UserRole;
 
@@ -33,6 +36,9 @@ public class PopulateDatabaseOnStart {
 
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private ShoppingItemCatalogRepository shoppingItemCatalogRepository;
 
     @PostConstruct
     public void initDatabase() {
@@ -41,9 +47,9 @@ public class PopulateDatabaseOnStart {
         // initialising admin and normal user if dont exist
         User adminUser = new User();
         adminUser.setUsername(DEFAULT_ADMIN_USERNAME);
-        adminUser.setFirstName("default administrator");
+        adminUser.setFirstName("default ADMIN");
         adminUser.setPassword(DEFAULT_ADMIN_PASSWORD);
-        adminUser.setUserRole(UserRole.ADMINISTRATOR);
+        adminUser.setUserRole(UserRole.ADMIN);
 
         List<User> users = userRepository.findByUsername(DEFAULT_ADMIN_USERNAME);
         if (users.isEmpty()) {
@@ -66,6 +72,19 @@ public class PopulateDatabaseOnStart {
         } else {
             LOG.info("defaultuser already exists. Not creating new :" + defaultUser);
         }
+        
+        List<ShoppingItem> itemlist = Arrays.asList(
+                new ShoppingItem("house", 20000.00),
+                new ShoppingItem("hen", 5.00),
+                new ShoppingItem("car", 5000.00),
+                new ShoppingItem("pet alligator", 65.00));
+        
+        
+        for(ShoppingItem item:itemlist){
+            shoppingItemCatalogRepository.save(item);
+        }
+        
+        
 
         LOG.debug("database initialised");
     }

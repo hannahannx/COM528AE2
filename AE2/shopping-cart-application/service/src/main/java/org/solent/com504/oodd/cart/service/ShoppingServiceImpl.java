@@ -1,7 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright 2021 rgaud.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package org.solent.com504.oodd.cart.service;
 
@@ -10,37 +20,40 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import org.solent.com504.oodd.cart.dao.impl.ShoppingItemCatalogRepository;
 import org.solent.com504.oodd.cart.model.service.ShoppingCart;
 import org.solent.com504.oodd.cart.model.dto.ShoppingItem;
 import org.solent.com504.oodd.cart.model.service.ShoppingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author cgallen
  */
-
+@Component
 public class ShoppingServiceImpl implements ShoppingService {
+    
+    @Autowired
+    private ShoppingItemCatalogRepository shoppingItemCatalogRepository;
 
     // note ConcurrentHashMap instead of HashMap if map can be altered while being read
-    private Map<String, ShoppingItem> itemMap = new ConcurrentHashMap<String, ShoppingItem>();
+//    private Map<String, ShoppingItem> itemMap = new ConcurrentHashMap<String, ShoppingItem>();
 
-    private List<ShoppingItem> itemlist = Arrays.asList(new ShoppingItem("house", 20000.00),
-            new ShoppingItem("hen", 5.00),
-            new ShoppingItem("car", 5000.00),
-            new ShoppingItem("pet alligator", 65.00)
-    );
 
     public ShoppingServiceImpl() {
 
-        // initialised the hashmap
-        for (ShoppingItem item : itemlist) {
-            itemMap.put(item.getName(), item);
-        }
+//        // initialised the hashmap
+//        for (ShoppingItem item : itemlist) {
+//            itemMap.put(item.getName(), item);
+//        }
     }
 
     @Override
     public List<ShoppingItem> getAvailableItems() {
-        return itemlist;
+        
+        List<ShoppingItem> itemList = shoppingItemCatalogRepository.findAll();
+        return itemList;
     }
 
     @Override
@@ -55,16 +68,16 @@ public class ShoppingServiceImpl implements ShoppingService {
 
     @Override
     public ShoppingItem getNewItemByName(String name) {
-        ShoppingItem templateItem = itemMap.get(name);
+        //ShoppingItem templateItem = itemMap.get(name);
         
-        if(templateItem==null) return null;
-        
-        ShoppingItem item = new ShoppingItem();
-        item.setName(name);
-        item.setPrice(templateItem.getPrice());
-        item.setQuantity(0);
-        item.setUuid(UUID.randomUUID().toString());
-        return item;
+//        if(templateItem==null) return null;
+//       
+    //    ShoppingItem item = new ShoppingItem();
+ //       item.setName(name);
+ //      item.setPrice(templateItem.getPrice());
+//        item.setQuantity(0);
+//        item.setUuid(UUID.randomUUID().toString());
+          return null;
     }
 
 }

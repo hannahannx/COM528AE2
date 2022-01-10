@@ -255,8 +255,8 @@ public class UserAndLoginController {
         User sessionUser = getSessionUser(session);
         model.addAttribute("sessionUser", sessionUser);
 
-        if (!UserRole.ADMINISTRATOR.equals(sessionUser.getUserRole())) {
-            errorMessage = "you must be an administrator to access users information";
+        if (!UserRole.ADMIN.equals(sessionUser.getUserRole())) {
+            errorMessage = "you must be an ADMIN to access users information";
             return "home";
         }
 
@@ -290,8 +290,8 @@ public class UserAndLoginController {
             return "home";
         }
 
-        if (!UserRole.ADMINISTRATOR.equals(sessionUser.getUserRole())) {
-            // if not an administrator you can only access your own account info
+        if (!UserRole.ADMIN.equals(sessionUser.getUserRole())) {
+            // if not an ADMIN you can only access your own account info
             if (!sessionUser.getUsername().equals(username)) {
                 errorMessage = "security non admin viewModifyUser called for username " + username
                         + "which is not the logged in user =" + sessionUser.getUsername();
@@ -353,7 +353,7 @@ public class UserAndLoginController {
             return "home";
         }
 
-        if (!UserRole.ADMINISTRATOR.equals(sessionUser.getUserRole())) {
+        if (!UserRole.ADMIN.equals(sessionUser.getUserRole())) {
             if (!sessionUser.getUsername().equals(username)) {
                 errorMessage = "security viewModifyUser called for non admin username " + username
                         + "which is not the logged in user =" + sessionUser.getUsername();
@@ -392,7 +392,7 @@ public class UserAndLoginController {
 
         // else update all other properties
         // only admin can update modifyUser role aand enabled
-        if (UserRole.ADMINISTRATOR.equals(sessionUser.getUserRole())) {
+        if (UserRole.ADMIN.equals(sessionUser.getUserRole())) {
             try {
                 UserRole role = UserRole.valueOf(userRole);
                 modifyUser.setUserRole(role);

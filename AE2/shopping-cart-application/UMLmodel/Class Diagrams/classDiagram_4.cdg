@@ -97,7 +97,7 @@
       <Literals>
         <Literal name="ANONYMOUS"/>
         <Literal name="CUSTOMER"/>
-        <Literal name="ADMINISTRATOR"/>
+        <Literal name="ADMIN"/>
       </Literals>
     </Enum>
   </ClassDiagramComponents>

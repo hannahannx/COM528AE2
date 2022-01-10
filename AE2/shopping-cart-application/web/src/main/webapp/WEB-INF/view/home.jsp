@@ -17,7 +17,15 @@
     <div style="color:red;">${errorMessage}</div>
     <div style="color:green;">${message}</div>
 
-    <H1>Available Items</H1>
+    <!<!-- This will be the searching bar for the items list -->
+    <div>
+        <form action="./home" method="GET">
+            <input type="text" placeholder="Search for specifc item... =" name="searchBar" id="searchBar">
+            <input type="hidden" name="action" value="search">
+        </form>
+    </div>
+    
+    <H1>Items List</H1>
     <table class="table">
 
         <tr>
@@ -38,6 +46,14 @@
                         <input type="hidden" name="itemName" value="${item.name}">
                         <input type="hidden" name="action" value="addItemToCart">
                         <button type="submit" >Add Item</button>
+                    </form> 
+                </td>
+                <td>
+                    <!-- post avoids url encoded parameters -->
+                    <form action="./home" method="get">
+                        <input type="hidden" name="itemName" value="${item.name}">
+                        <input type="hidden" name="action" value="removeItemFromCart">
+                        <button type="submit" >Remove Item</button>
                     </form> 
                 </td>
             </tr>

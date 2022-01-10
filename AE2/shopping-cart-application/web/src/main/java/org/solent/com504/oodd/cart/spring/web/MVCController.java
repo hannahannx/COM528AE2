@@ -2,6 +2,7 @@ package org.solent.com504.oodd.cart.spring.web;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -54,6 +55,7 @@ public class MVCController {
         return "redirect:/index.html";
     }
 
+    //redirects to home page
     @RequestMapping(value = "/home", method = {RequestMethod.GET, RequestMethod.POST})
     public String viewCart(@RequestParam(name = "action", required = false) String action,
             @RequestParam(name = "itemName", required = false) String itemName,
@@ -138,6 +140,28 @@ public class MVCController {
     }
 
 
+     @RequestMapping(value = "/catalogue", method = {RequestMethod.GET, RequestMethod.POST})
+     public String catalogueList(Model model, HttpSession session) {
+
+        // get sessionUser from session
+        User sessionUser = getSessionUser(session);
+        model.addAttribute("sessionUser", sessionUser);
+        
+        
+        //List<ShoppingItem> availableItems = new ArrayList();
+        
+        List<ShoppingItem> availableItems = shoppingService.getAvailableItems();
+        
+        model.addAttribute("availableItems", availableItems);
+
+        // used to set tab selected
+        model.addAttribute("selectedPage", "admin");
+        return "catalogue";
+    }
+    
+    
+    
+    
     /*
      * Default exception handler, catches all exceptions, redirects to friendly
      * error page. Does not catch request mapping errors

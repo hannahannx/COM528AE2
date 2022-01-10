@@ -17,7 +17,7 @@
         <link rel="icon" href="../../favicon.ico">
         <!--<link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/navbar/">-->
 
-        <title>Navbar Template for Bootstrap</title>
+        <title>Shopping Cart Application</title>
 
         <!-- Bootstrap core CSS -->
         <link href="./resources/css/bootstrap.min.css" rel="stylesheet">
@@ -41,19 +41,19 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Project name</a>
+                        <a class="navbar-brand" href="#">Shopping Cart Application</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li <% if ("home".equals(request.getAttribute("selectedPage"))) {%> class="active"  <% } %> ><a href="./home">Home</a></li> 
                             <li <% if ("about".equals(request.getAttribute("selectedPage"))) {%>  class="active"  <% } %> ><a href="./about">About</a></li> 
                             <li <% if ("contact".equals(request.getAttribute("selectedPage"))) {%>  class="active"  <% }%> ><a href="./contact">Contact</a></li>                          
-                                <c:if test="${sessionUser.userRole =='ADMINISTRATOR'}">
+                                <c:if test="${sessionUser.userRole =='ADMIN'}">
                                 <li class="dropdown" >
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Admin <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="./users">Manage Users</a></li>
-                                        <li><a href="./catalog">Manage Catalogue</a></li>
+                                        <li><a href="./catalogue">Manage Catalogue</a></li>
                                     </ul>
                                 </li>
                             </c:if>
@@ -70,7 +70,7 @@
                                     <input type="hidden" name="username" value="${sessionUser.username}"/>
                                 </form>
                                 <p class="text-muted"> Welcome 
-                                    <c:if test="${sessionUser.userRole =='ADMINISTRATOR'}"> Admin</c:if>                                   
+                                    <c:if test="${sessionUser.userRole =='ADMIN'}"> Admin</c:if>                                   
                                     ${sessionUser.username}&nbsp;&nbsp;
                                     <a onclick="document.forms['logoutForm'].submit()">Logout</a><BR>
                                     <a onclick="document.forms['profile'].submit()">User Profile</a></p>
