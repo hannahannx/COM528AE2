@@ -82,8 +82,8 @@ In this shopping cart system I will provide a comprehensive range of tests throu
 
 | Test Case Number	| Test Description	| Action | Expected Result | Actual Result | Pass/Fail |
 | --------------- 	| ------------------| ------ | --------------- | ------------- | --------- |
-| T01 	| U01 | User will load site  | Catalogue page shown on screen  |  HOME PAGE IS SHOWN |  HOME PAGE SHOWN | PASS
-| T02 	| U02 | User will enter in the item they want to search for in search bar | Items which share same name shown on screen  | SHOWS ITEM WITH SAME NAME  | - | 
+| T01 	| U01 | User will load site  | Catalogue page shown on screen  |  HOME PAGE IS SHOWN |  PASS | 
+| T02 	| U02 | User will enter in the item they want to search for in search bar | Items which share same name shown on screen  | SHOWS ITEM WITH SAME NAME  | fail | 
 | T03 	| U03 | User will click add item to cart | Message confirming that have added item to the shopping cart is displayed  | unknown message shows  |  na  | fail | |
 | T03.1 	| U03 | User will click add item to cart, that is not in inventory| Error message displayed - item out of stock  | na  | fail |
 | T04 	| U04 | user will remove an item from the shopping cart | Message confirming that they have sucessfully removed the item from the shopping cart is displayed | messages shown  | pass |
