@@ -6,38 +6,38 @@ I will be documenting the key design process development work implememted to pla
 
 ### Home View
 
-- view item list
-- add/remove items from shopping cart
-- search for items
+- view item list YES
+- add/remove items from shopping cart HALF
+- search for items YES
 
 ### Shopping Cart View
 
-- view added items
-- view total price
-- view checkout
+- view added items NO
+- view total price NO
+- view checkout NO
 
 ### Checkout View
 
-- enter card details
-- comfirm purchase
+- enter card details NO
+- comfirm purchase NO
 
 ### Orders View
 
-- view all orders (customer)
-- edit order status
-- view orders from all users (admin)
+- view all orders (customer) NO
+- edit order status NO
+- view orders from all users (admin) NO
 
 ### Users View
 
-- create user
-- login to user
-- update user
-- update user role (admin)
+- create user YES 
+- login to user YES
+- update user YES 
+- update user role (admin) YES
 
 ### Catalogue View (admin)
 
-- view all items in stock
-- view/edit/delete items   
+- view all items in stock NO
+- view/edit/delete items   NO
 
 
 
@@ -82,28 +82,28 @@ In this shopping cart system I will provide a comprehensive range of tests throu
 
 | Test Case Number	| Test Description	| Action | Expected Result | Actual Result | Pass/Fail |
 | --------------- 	| ------------------| ------ | --------------- | ------------- | --------- |
-| T01 	| U01 | User will load site  | Catalogue page shown on screen  |  - |  - | 
-| T02 	| U02 | User will enter in the item they want to search for in search bar | Items which share same name shown on screen  | -  | - | 
-| T03 	| U03 | User will click add item to cart | Message confirming that have added item to the shopping cart is displayed  | -  | - |
-| T03.1 	| U03 | User will click add item to cart, that is not in inventory| Error message displayed - item out of stock  | -  | - |
-| T04 	| U04 | user will remove an item from the shopping cart | Message confirming that they have sucessfully removed the item from the shopping cart is displayed | -  | - |
-| T05 	| U05 | user will click sign into the system | Sign in page displays and contains required inputs  | -  | - |
-| T06 	| U06 | user will click create a new account | New account page displays and contains required inputs   |  -  | - |
-| T07 	| U07 | user will click modify their account details | user account page will show up and user has the option to alter their details expect formt he modify role button  |  -  | - |
-| T08 	| U08 | user will click the shopping cart | Shopping cart page will load  |  -  | - |
-| T08.1	| U08 | user will click the shopping cart, checkout | Enter card details will load  |  -  | - |
-| T08 	| U08 | user will click the shopping cart | Shopping cart page will load  |  -  | - |
-| T09 	| U09 | user will enter incorrect card deatails| Error message is displayed - incorrect card details  |  -  | - |
-| T10	  | U10 | user will click to view their orders placed | All recent orders will display | -  | - |
-| T11 	| U11 | user will add an item to the catalogue | Item will show on the catalogue page  | -  | - |
-| T12 	| U12 | user will modify item in catalogue| Item will update on the catalogue page if still in stock | -  | - |
-| T13 	| U13 | user will delete item in catalogue| Item is not availbe for users to purchase on the catalogue page  |  -  | - |
-| T14	  | U14 | user will change catalogue inventory | Items stock are updated for the items specified |  -  | - |
-| T15 	| U15 | user will click view and modify all orders placed | The order status is updated for the user   |  -  | - |
-| T16 	| U16 | user will click view and modify account role for users| The users details are updated on the users "modify details" page  |   -  | - |
-| T17	  | U17 | user will click log out	| Session for the current user is removed  | -  | - |
-| T18 	| U18 | user will click  deactivate account | Confirmation message appears - are you sure you would like to do this action? Then user is unable to access account and session is removed for user |  -  | - |
-| T19 	| U19 | deactivated user will try to log in | Error message displayed  -  "Sorry your account has been deactivated" |  -  | - |
+| T01 	| U01 | User will load site  | Catalogue page shown on screen  |  HOME PAGE IS SHOWN |  HOME PAGE SHOWN | PASS
+| T02 	| U02 | User will enter in the item they want to search for in search bar | Items which share same name shown on screen  | SHOWS ITEM WITH SAME NAME  | - | 
+| T03 	| U03 | User will click add item to cart | Message confirming that have added item to the shopping cart is displayed  | unknown message shows  |  na  | fail | |
+| T03.1 	| U03 | User will click add item to cart, that is not in inventory| Error message displayed - item out of stock  | na  | fail |
+| T04 	| U04 | user will remove an item from the shopping cart | Message confirming that they have sucessfully removed the item from the shopping cart is displayed | messages shown  | pass |
+| T05 	| U05 | user will click sign into the system | Sign in page displays and contains required inputs  | signs in user   | pass |
+| T06 	| U06 | user will click create a new account | New account page displays and contains required inputs   |  creates new account  | pass |
+| T07 	| U07 | user will click modify their account details | user account page will show up and user has the option to alter their details expect formt he modify role button  |  modifies sucessfully  | pass |
+| T08 	| U08 | user will click the shopping cart | Shopping cart page will load  |  na  | fail |
+| T08.1	| U08 | user will click the shopping cart, checkout | Enter card details will load  |  na  | fail |
+| T08 	| U08 | user will click the shopping cart | Shopping cart page will load  | na  | fail |
+| T09 	| U09 | user will enter incorrect card deatails| Error message is displayed - incorrect card details  | na  | fail |
+| T10	  | U10 | user will click to view their orders placed | All recent orders will display | na  | fail |
+| T11 	| U11 | user will add an item to the catalogue | Item will show on the catalogue page  | na  | fail |
+| T12 	| U12 | user will modify item in catalogue| Item will update on the catalogue page if still in stock | na  | fail |
+| T13 	| U13 | user will delete item in catalogue| Item is not availbe for users to purchase on the catalogue page  |  na  | fail |
+| T14	  | U14 | user will change catalogue inventory | Items stock are updated for the items specified |  na  | fail |
+| T15 	| U15 | user will click view and modify all orders placed | The order status is updated for the user   |  na  | fail |
+| T16 	| U16 | user will click view and modify account role for users| The users details are updated on the users "modify details" page  |   useers details modified  | pass |
+| T17	  | U17 | user will click log out	| Session for the current user is removed  | user logs out  | pass |
+| T18 	| U18 | user will click  deactivate account | Confirmation message appears - are you sure you would like to do this action? Then user is unable to access account and session is removed for user |  na  | fail |
+| T19 	| U19 | deactivated user will try to log in | Error message displayed  -  "Sorry your account has been deactivated" |  na  | fail |
 
 
 ## UML Class Model
